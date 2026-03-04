@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskManager Pro | Votre plateforme de productivité</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>TaskManager Pro</h1>
+            <p>Gérez vos objectifs avec style et efficacité.</p>
+        </header>
+
+        <section class="task-form">
+            <form id="taskForm">
+                <div class="input-group">
+                    <input type="text" id="title" placeholder="Qu'avez-vous à faire ?" required>
+                    <select id="priority">
+                        <option value="low">Priorité Basse</option>
+                        <option value="medium" selected>Priorité Moyenne</option>
+                        <option value="high">Priorité Haute</option>
+                    </select>
+                    <button type="submit" class="btn-add">Ajouter</button>
+                </div>
+                <div class="input-group" style="grid-template-columns: 2fr 1fr;">
+                    <textarea id="description" placeholder="Description (optionnel)" rows="1"></textarea>
+                    <input type="datetime-local" id="dueDate">
+                </div>
+            </form>
+        </section>
+
+        <section class="controls">
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">Toutes</button>
+                <button class="filter-btn" data-filter="active">En cours</button>
+                <button class="filter-btn" data-filter="completed">Terminées</button>
+            </div>
+            <div class="sorting">
+                <select id="sortSelect">
+                    <option value="created_at">Plus récentes</option>
+                    <option value="priority">Par priorité</option>
+                    <option value="due_date">Par échéance</option>
+                </select>
+            </div>
+        </section>
+
+        <div id="taskList" class="task-list">
+            <!-- Les tâches apparaîtront ici -->
+        </div>
+    </div>
+
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
